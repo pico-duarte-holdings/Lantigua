@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Barlow:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 :root{--gold:#D9AE31;--cy:#4FD1D9;--ink:#05090F;--panel:#0C1522;--txt:#E8EDF4;--mute:rgba(232,237,244,.64)}
 *{box-sizing:border-box}
@@ -33,6 +33,8 @@ img{max-width:100%}
 a{color:var(--gold);text-decoration:none}
 a:hover{color:var(--cy)}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+.skip-link{position:fixed;top:12px;left:12px;z-index:1000;background:var(--gold);color:var(--ink);font-family:'JetBrains Mono',monospace;font-weight:700;padding:12px 16px;transform:translateY(-160%)}
+.skip-link:focus{transform:translateY(0);color:var(--ink)}
 ::selection{background:var(--gold);color:var(--ink)}
 h1,h2,h3{font-family:'Chakra Petch',sans-serif;font-weight:700;text-transform:uppercase;margin:0;line-height:1.05}
 .wrap{max-width:1220px;margin:0 auto;padding:0 24px}
@@ -106,8 +108,8 @@ h1,h2,h3{font-family:'Chakra Petch',sans-serif;font-weight:700;text-transform:up
 /* about */
 .about{padding:88px 0}
 .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:start}
-.about h2,.services h2,.process h2,.contact h2{font-size:clamp(30px,4vw,46px)}
-.about h2 span,.services h2 span,.process h2 span,.contact h2 span{color:var(--gold)}
+.about h2,.services h2,.work h2,.process h2,.contact h2{font-size:clamp(30px,4vw,46px)}
+.about h2 span,.services h2 span,.work h2 span,.process h2 span,.contact h2 span{color:var(--gold)}
 .about-head{display:flex;flex-direction:column;gap:16px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .chip{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,237,244,.8);border:1px solid rgba(232,237,244,.18);background:rgba(232,237,244,.04);padding:7px 12px}
@@ -129,6 +131,19 @@ h1,h2,h3{font-family:'Chakra Petch',sans-serif;font-weight:700;text-transform:up
 .svc h3{font-size:20px;line-height:1.2}
 .rule{width:44px;height:2px;background:var(--gold)}
 .svc p{font-size:15.5px;line-height:1.65;margin:0;color:var(--mute)}
+
+/* selected work */
+.work{padding:88px 0;border-top:1px solid rgba(217,174,49,.22)}
+.work .sec-head{max-width:760px}
+.work-intro{font-size:17px;line-height:1.7;margin:0;color:var(--mute);max-width:62ch}
+.work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.work-card{background:var(--panel);border:1px solid rgba(232,237,244,.1);border-top:3px solid var(--gold);padding:28px 26px;display:flex;flex-direction:column;gap:14px;min-height:260px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.work-card:hover{transform:translateY(-5px);border-color:rgba(217,174,49,.65);box-shadow:0 0 42px rgba(217,174,49,.15)}
+.work-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cy)}
+.work-card h3{font-size:22px;line-height:1.2}
+.work-card p{font-size:15.5px;line-height:1.65;margin:0;color:var(--mute);flex:1}
+.work-link{align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(217,174,49,.55);padding:8px 0}
+.work-link::after{content:"  ↗"}
 
 /* process */
 .process{padding:88px 0}
@@ -190,7 +205,7 @@ footer{background:var(--ink);color:rgba(232,237,244,.62);padding:56px 24px 40px;
   .nav-toggle{display:flex}
   .hero{padding:56px 0 72px}
   .hero-grid{gap:44px}
-  .about,.services,.process,.contact{padding:64px 0}
+  .about,.services,.work,.process,.contact{padding:64px 0}
   form{padding:28px 22px}
   .stat{border-left:none;border-top:1px solid rgba(232,237,244,.08)}
 }
@@ -218,12 +233,15 @@ footer{background:var(--ink);color:rgba(232,237,244,.62);padding:56px 24px 40px;
 </head>
 <body id="top">
 
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <header class="site-head">
   <nav class="wrap" aria-label="Main navigation">
     <a class="logo" href="#top" aria-label="Lantigua &amp; Co. home"><img src="assets/logo-h-on-navy.png" alt="Lantigua &amp; Co." width="1600" height="360"></a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#work">Work</a>
       <a href="#process">Protocol</a>
       <a href="#contact">Contact</a>
       <a class="btn-gold" href="#contact">Book a Consult</a>
@@ -235,12 +253,13 @@ footer{background:var(--ink);color:rgba(232,237,244,.62);padding:56px 24px 40px;
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#work">Work</a>
     <a href="#process">Protocol</a>
     <a href="#contact">Contact</a>
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy" data-reveal="off">
@@ -352,6 +371,42 @@ footer{background:var(--ink);color:rgba(232,237,244,.62);padding:56px 24px 40px;
           <div class="svc-top"><span class="svc-num">06</span><span class="svc-tag">Execution</span></div>
           <h3>Project Management</h3><span class="rule" aria-hidden="true"></span>
           <p>Planning, execution, and accountability systems that get initiatives across the finish line. Big goals break into missions with owners, timelines, and checkpoints. Momentum stops being an accident and becomes a system.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="sec-head" data-reveal="off">
+        <span class="eyebrow">// Proof of Execution</span>
+        <h2>Work you can <span>inspect.</span></h2>
+        <p class="work-intro">Live examples of strategy, branding, and web execution across a local client and companies operated under Pico Duarte Holdings.</p>
+      </div>
+      <div class="work-grid">
+        <article class="work-card clip-sm" data-reveal="off">
+          <span class="work-tag">Client Website</span>
+          <h3>Adams Family Dry Cleaning</h3>
+          <p>A mobile-ready local service website that makes store information, services, and direct contact easy to find for Royal Palm Beach customers.</p>
+          <a class="work-link" href="https://adamsfamilydrycleaning.com" target="_blank" rel="noopener">View live site</a>
+        </article>
+        <article class="work-card clip-sm" data-reveal="off">
+          <span class="work-tag">Brand + Commerce</span>
+          <h3>Drop Zone Print</h3>
+          <p>A veteran-owned 3D-printing brand with a focused catalog story, made-to-order positioning, and a clear path from discovery to inquiry.</p>
+          <a class="work-link" href="https://dropzoneprint.com" target="_blank" rel="noopener">View live site</a>
+        </article>
+        <article class="work-card clip-sm" data-reveal="off">
+          <span class="work-tag">Collectibles</span>
+          <h3>Rally Point TCG</h3>
+          <p>A veteran-owned trading card storefront built to introduce the brand, organize multiple card categories, and prepare customers for future inventory.</p>
+          <a class="work-link" href="https://rallypointtcg.com" target="_blank" rel="noopener">View live site</a>
+        </article>
+        <article class="work-card clip-sm" data-reveal="off">
+          <span class="work-tag">Sneaker Marketplace</span>
+          <h3>VetKicks</h3>
+          <p>A West Palm Beach sneaker brand centered on authenticity, veteran ownership, and a confident visual identity for buyers and collectors.</p>
+          <a class="work-link" href="https://vetkicks.com" target="_blank" rel="noopener">View live site</a>
         </article>
       </div>
     </div>
