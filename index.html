@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lantigua &amp; Co. — Business Consulting, Web Design, SEO &amp; Recruiting</title>
-<meta name="description" content="Veteran-owned business consulting firm serving Palm Beach and clients nationwide with business strategy, web design, SEO, human resources consulting, and recruiting services.">
+<meta name="description" content="Veteran-owned, SAM-registered business consulting firm serving commercial and public-sector clients with strategy, web design, SEO, HR consulting, and recruiting services.">
 <link rel="canonical" href="https://lantigua.net/">
 <meta property="og:title" content="Lantigua &amp; Co. — Strategy, Digital Growth &amp; Talent">
 <meta property="og:description" content="Business consulting, web design, SEO, HR consulting, and recruiting from a veteran-owned firm serving South Florida and clients nationwide.">
@@ -109,8 +109,8 @@ h1,h2,h3{font-family:'Chakra Petch',sans-serif;font-weight:700;text-transform:up
 /* about */
 .about{padding:88px 0}
 .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:start}
-.about h2,.services h2,.work h2,.process h2,.contact h2{font-size:clamp(30px,4vw,46px)}
-.about h2 span,.services h2 span,.work h2 span,.process h2 span,.contact h2 span{color:var(--gold)}
+.about h2,.services h2,.government h2,.work h2,.process h2,.contact h2{font-size:clamp(30px,4vw,46px)}
+.about h2 span,.services h2 span,.government h2 span,.work h2 span,.process h2 span,.contact h2 span{color:var(--gold)}
 .about-head{display:flex;flex-direction:column;gap:16px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .chip{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,237,244,.8);border:1px solid rgba(232,237,244,.18);background:rgba(232,237,244,.04);padding:7px 12px}
@@ -132,6 +132,31 @@ h1,h2,h3{font-family:'Chakra Petch',sans-serif;font-weight:700;text-transform:up
 .svc h3{font-size:20px;line-height:1.2}
 .rule{width:44px;height:2px;background:var(--gold)}
 .svc p{font-size:15.5px;line-height:1.65;margin:0;color:var(--mute)}
+
+/* government contracting */
+.government{padding:88px 0;border-top:1px solid rgba(217,174,49,.22);background-image:radial-gradient(760px 420px at 88% 20%,rgba(79,209,217,.1),transparent 72%)}
+.gov-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:56px;align-items:start}
+.gov-copy{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.gov-copy p{font-size:17px;line-height:1.7;margin:0;color:var(--mute);max-width:60ch}
+.gov-list{list-style:none;margin:4px 0 2px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px;width:100%}
+.gov-list li{position:relative;padding:10px 0 10px 22px;border-bottom:1px solid rgba(232,237,244,.1);font-size:15.5px;line-height:1.45;color:rgba(232,237,244,.82)}
+.gov-list li::before{content:"";position:absolute;left:2px;top:17px;width:8px;height:8px;background:var(--cy);transform:rotate(45deg)}
+.gov-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}
+.gov-actions .btn-gold{font-size:15px;padding:15px 26px}
+.gov-actions .cta-ghost{font-size:15px;padding:14px 24px}
+.gov-card{background:var(--panel);border:1px solid rgba(217,174,49,.42);padding:30px;box-shadow:0 0 54px rgba(217,174,49,.1)}
+.gov-status{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:20px;border-bottom:1px solid rgba(232,237,244,.12)}
+.gov-status strong{font-family:'Chakra Petch',sans-serif;font-size:21px;text-transform:uppercase}
+.status-pill{display:inline-flex;align-items:center;gap:8px;color:var(--cy);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(79,209,217,.45);padding:7px 10px;white-space:nowrap}
+.status-pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cy);box-shadow:0 0 12px rgba(79,209,217,.8)}
+.gov-ids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0}
+.gov-id{background:rgba(5,9,15,.55);border:1px solid rgba(232,237,244,.11);padding:17px 16px}
+.gov-id span{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--cy);margin-bottom:8px}
+.gov-id strong{font-family:'Chakra Petch',sans-serif;font-size:20px;letter-spacing:.04em;word-break:break-word}
+.gov-detail{display:flex;justify-content:space-between;gap:18px;padding:13px 0;border-top:1px solid rgba(232,237,244,.1);font-size:14.5px;line-height:1.4}
+.gov-detail span:first-child{color:var(--mute)}
+.gov-detail span:last-child{text-align:right;font-weight:600}
+.gov-note{margin:18px 0 0;padding:14px 16px;border-left:3px solid var(--gold);background:rgba(217,174,49,.08);font-size:14px;line-height:1.55;color:rgba(232,237,244,.76)}
 
 /* selected work */
 .work{padding:88px 0;border-top:1px solid rgba(217,174,49,.22)}
@@ -206,9 +231,15 @@ footer{background:var(--ink);color:rgba(232,237,244,.62);padding:56px 24px 40px;
   .nav-toggle{display:flex}
   .hero{padding:56px 0 72px}
   .hero-grid{gap:44px}
-  .about,.services,.work,.process,.contact{padding:64px 0}
+  .about,.services,.government,.work,.process,.contact{padding:64px 0}
+  .gov-grid{grid-template-columns:1fr;gap:36px}
   form{padding:28px 22px}
   .stat{border-left:none;border-top:1px solid rgba(232,237,244,.08)}
+}
+@media(max-width:560px){
+  .gov-list,.gov-ids{grid-template-columns:1fr}
+  .gov-card{padding:24px 20px}
+  .gov-status{align-items:flex-start;flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none !important}
@@ -229,6 +260,10 @@ footer{background:var(--ink);color:rgba(232,237,244,.62);padding:56px 24px 40px;
   "areaServed": ["South Florida", "United States"],
   "founder": {"@type": "Person", "name": "Angel Lantigua", "jobTitle": "Founder & Principal Consultant"},
   "parentOrganization": {"@type": "Organization", "name": "Pico Duarte Holdings LLC"},
+  "identifier": [
+    {"@type": "PropertyValue", "propertyID": "Unique Entity ID", "value": "UFNYEKNRSDH6"},
+    {"@type": "PropertyValue", "propertyID": "CAGE Code", "value": "25B59"}
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Consulting and digital services",
@@ -253,8 +288,8 @@ footer{background:var(--ink);color:rgba(232,237,244,.62);padding:56px 24px 40px;
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#government">Government</a>
       <a href="#work">Work</a>
-      <a href="#process">Protocol</a>
       <a href="#contact">Contact</a>
       <a class="btn-gold" href="#contact">Book a Consult</a>
     </div>
@@ -265,6 +300,7 @@ footer{background:var(--ink);color:rgba(232,237,244,.62);padding:56px 24px 40px;
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#government">Government</a>
     <a href="#work">Work</a>
     <a href="#process">Protocol</a>
     <a href="#contact">Contact</a>
@@ -383,6 +419,42 @@ footer{background:var(--ink);color:rgba(232,237,244,.62);padding:56px 24px 40px;
     </div>
   </section>
 
+  <section class="government" id="government">
+    <div class="wrap gov-grid">
+      <div class="gov-copy" data-reveal="off">
+        <span class="eyebrow">// Government &amp; Public Sector</span>
+        <h2>Ready to support <span>the mission.</span></h2>
+        <p>Lantigua &amp; Co. is actively registered in SAM.gov for All Awards and registered as a vendor in MyFloridaMarketPlace. We support government agencies, prime contractors, and mission-driven organizations with disciplined business, digital, and workforce solutions.</p>
+        <ul class="gov-list" aria-label="Government contracting capabilities">
+          <li>Business consulting &amp; operations</li>
+          <li>Web design &amp; development</li>
+          <li>SEO &amp; digital visibility</li>
+          <li>Human resources consulting</li>
+          <li>Recruiting &amp; talent acquisition</li>
+          <li>Prime &amp; subcontracting support</li>
+        </ul>
+        <div class="gov-actions">
+          <a class="btn-gold clip-sm" href="mailto:support@lantigua.net?subject=Government%20Contracting%20Inquiry">Government inquiry</a>
+          <a class="cta-ghost clip-sm" href="#work">Review our work</a>
+        </div>
+      </div>
+      <aside class="gov-card clip" data-reveal="off" aria-label="Government registration details">
+        <div class="gov-status">
+          <strong>Federal Registration</strong>
+          <span class="status-pill">Active</span>
+        </div>
+        <div class="gov-ids">
+          <div class="gov-id"><span>Unique Entity ID</span><strong>UFNYEKNRSDH6</strong></div>
+          <div class="gov-id"><span>CAGE Code</span><strong>25B59</strong></div>
+        </div>
+        <div class="gov-detail"><span>SAM.gov purpose</span><span>All Awards</span></div>
+        <div class="gov-detail"><span>Registration valid through</span><span>September 17, 2027</span></div>
+        <div class="gov-detail"><span>Florida marketplace</span><span>Registered vendor</span></div>
+        <p class="gov-note">Veteran-owned, Florida-based, and available for prime contracting, subcontracting, and teaming conversations nationwide.</p>
+      </aside>
+    </div>
+  </section>
+
   <section class="work" id="work">
     <div class="wrap">
       <div class="sec-head" data-reveal="off">
@@ -484,6 +556,7 @@ footer{background:var(--ink);color:rgba(232,237,244,.62);padding:56px 24px 40px;
             <option>SEO &amp; Local Search</option>
             <option>Human Resources Consulting</option>
             <option>Recruiting &amp; Talent Acquisition</option>
+            <option>Government Contracting / Subcontracting</option>
             <option>Other</option>
           </select>
           <span class="err" id="e-service" role="alert"></span>
